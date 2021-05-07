@@ -1,46 +1,29 @@
-# Getting Started with Create React App
+## Steps to run:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- yarn && yarn start;
 
-## Available Scripts
+## Problem 1: file: (commons/bTreeUtils.ts function: createBTree)
 
-In the project directory, you can run:
+- I created the interface (Interface/Input.ts) to make sure that the input will be valid.
+- Created the interface (Interfaces/BTree.ts) to validate the output
+- Inside the function parse the input to a binary tree using recursiviness
 
-### `yarn start`
+## Problem 2:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Added input type=file to read from local the file
+- I modified the styles of label to show in a proper way.
+- I Added validation to makesure that the input fit with the interface Input (if the content is OK show a check icon if not show a red cross icon)
+- If it is valid parse the string into a json a put in the editor.
+- Added an external editor library to have highligth syntax (https://github.com/securingsincity/react-ace)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- I think that is most clear if I use a tree graph instead of squares, so I created a component call BTreeGraph, with SVG and circles, text and lines.
+- In BTreeNode I called the component recursively to render the left and right nodes.
 
-### `yarn test`
+- When the value of editor changes, validate again
+- If is a valid json and match with node interface, render again the tree if not hides the tree and show a message.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Problem 3.
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- I create a separate function to retrieve the smallest subtree in file (commons/bTreeUtils.ts function: smallestSubTree )
+- After that create a hashing function that assings to every node a unique hash.
+- In the BTreeGraph and BTreeNode I pass this subtree and compare the hash change the styles if it is the smallest subtree

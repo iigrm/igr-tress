@@ -1,0 +1,45 @@
+.fileInput{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.fileInput +label{
+  display: flex;
+  background:rgba(204, 204, 204, 1);
+  padding: 10px;
+  width: 127px;
+  align-items: center;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.fileInput+label:hover{
+  background: rgba(204,204,204,0.7)
+}
+
+.fileUploadIcon {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+}
+
+.fileWrapper {
+  display: flex;
+}
+
+.fileName {
+  margin-left: 10px;
+}
+
+.fileStatusIcon{
+  height: 20px;
+  width: 20px;
+}
+
+.fileStatusWrapper{
+  display: flex;
+  align-items: center;
+}
